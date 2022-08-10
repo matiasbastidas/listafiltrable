@@ -1,34 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.css">
-<title>Lista filtrable contactos</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista libros filtrable</title>
 </head>
 <body>
-    <div class="container">
-        <h1 class="center-align">Contactos</h1>
-        <input type="text" id="entradaFiltro" placeholder="Buscar contactos...">
-        <ul id="nombres" class="collection with-header">
-            <li class="collection-header"><h5>A</h5></li>
-            <li class="collection-item"><a href="#">Antonio</a></li>
-            <li class="collection-item"><a href="#">Andrés</a></li>
-            <li class="collection-item"><a href="#">Alejandro</a></li>
-            <li class="collection-item"><a href="#">Ana</a></li>
-            <li class="collection-header"><h5>B</h5></li>
-            <li class="collection-item"><a href="#">Benjamin</a></li>
-            <li class="collection-item"><a href="#">Boris</a></li>
-            <li class="collection-item"><a href="#">Bruno</a>/li>
-            <li class="collection-item"><a href="#">Barbara</a></li>
-            <li class="collection-header"><h5>C</h5></li>
-            <li class="collection-item"><a href="#">Consuelo</a></li>
-            <li class="collection-item"><a href="#">Camila</a></li>
-            <li class="collection-item"><a href="#">Catalina</a></li>
-            <li class="collection-item"><a href="#">Constanza</a></li>
-        </ul>
-    </div>
-<script src="main.js"></script>
+    <h1>Lista libros</h1>
+    <input type="text" id="entradaBuscador" placeholder="Busca un libro...">
+
+    <ol id="libros">
+    </ol>
+    <script src="./main.js"></script>
 </body>
 </html>

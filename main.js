@@ -1,25 +1,29 @@
-// obtener valores de entrada
-let entradaFiltro = document.getElementById('entradaFiltro');
-// evento listener, comenza a ejecutar la funcion filtrarNombres
-entradaFiltro.addEventListener('keyup', filtrarNombres);
+const entrada = document.querySelector('#entradaBuscador')
+const listaLibros = document.querySelector('#libros')
 
-function filtrarNombres(){
-// obtener valor de entrada 
-let valorFiltro = document.getElementById('entradaFiltro').value.toUpperCase();
+let libros = []
 
-// obtener nombres de la lista
-let ul = document.getElementById('nombres');
-// obtener los items de la lista
-let li = ul.querySelectorAll('li.collection-item');
+window.addEventListener('DOMContentLoaded', async () => {
+    listaLibros.innerHTML = "<h1>Cargando...</h1>"
+    const datos = await cargarLibros()
+    libros = datos.data
+    renderizarLibros(libros)
+})
 
-// recorrer los items de la lista
-for(let i = 0;i < li.length;i++){
-    let a = li[i].getElementsByTagName('a')[0];
-    // si coincide el nombre con el valor de entrada
-    if(a.innerHTML.toUpperCase().indexOf(valorFiltro) > -1){
-        li[i].style.display = '';
-    } else {
-        li[i].style.display = 'none';
-        }
+async function cargarLibros() {
+    const respuesta = await fetch('https://fakerapi.it/api/v1/books?_quantity=1000')
+    return await respuesta.json()
 }
+
+entrada.addEventListener('keyup', e => {
+    const nuevosLibros = libros.filter(libro => `${libro.title.toLowerCase()} ${libro.author.toLowerCase()}`
+    .includes(entrada.value.toLowerCase()))
+    renderizarLibros(nuevosLibros)
+})
+
+const crearItemsLibros = libros => libros.map(libros => `<li>${libros.title} - ${libros.author}</li>`).join(' ')
+
+function renderizarLibros(libros) {
+    const itemsString = crearItemsLibros(libros)
+    listaLibros.innerHTML = itemsString
 }
