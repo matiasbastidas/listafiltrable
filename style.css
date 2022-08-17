@@ -1,0 +1,28 @@
+body {
+    background-color: #0D1721;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.titulo {
+    font-size: 60px;
+}
+
+.buscador {
+    width: 20%;
+    text-align: center;
+    border: 2px solid #04AA6D;
+    background-color: #38444D;
+    color: #F2F2F2
+}
+
+ol {
+    list-style-type: none;
+    padding: 5px;
+}
+
+li {
+    padding: 5px;
+    margin: 3px 0;
+    font-size: 20px;
+}

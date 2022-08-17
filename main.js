@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 })
 
 async function cargarLibros() {
-    const respuesta = await fetch('https://fakerapi.it/api/v1/books?_quantity=1000')
+    const respuesta = await fetch('https://fakerapi.it/api/v1/books?_quantity=500')
     return await respuesta.json()
 }
 
